@@ -13,9 +13,10 @@
 				controller: '<%= state.ctrlName %>',
 				resolve: {
 					load: ['$ocLazyLoad', function ($ocLazyLoad) {
-						return $ocLazyLoad.load(['<%= state.loadFileArr.join("','") %>']);
+						return $ocLazyLoad.load(['<%= state.loadFileArr.join("', '") %>']);
 					}]
-				}
+				},
+				<%= state.custom %>				
 			});
 		 */
 		 /** endInject */

@@ -13,9 +13,10 @@
 				controller: '<%= state.ctrlName %>',
 				resolve: {
 					load: ['$ocLazyLoad', function ($ocLazyLoad) {
-						return $ocLazyLoad.load(['<%= state.loadFileArr.join("','") %>']);
+						return $ocLazyLoad.load(['<%= state.loadFileArr.join("', '") %>']);
 					}]
-				}
+				},
+				<%= state.custom %>				
 			});
 		 */
 		// 一级页面主controller
@@ -26,9 +27,10 @@
 				controller: 'MainCtrl',
 				resolve: {
 					load: ['$ocLazyLoad', function ($ocLazyLoad) {
-						return $ocLazyLoad.load(['/module/main/Main.controller.js','/module/main/index.css']);
+						return $ocLazyLoad.load(['/module/main/Main.controller.js', '/module/main/index.css']);
 					}]
-				}
+				},
+				role: [{ status: 1, toState: 'second.myLogin' }]				
 			});
 		 
 		// Login controller
@@ -39,9 +41,10 @@
 				controller: 'LoginCtrl',
 				resolve: {
 					load: ['$ocLazyLoad', function ($ocLazyLoad) {
-						return $ocLazyLoad.load(['/module/main/Main.controller.js','/module/main/login.css']);
+						return $ocLazyLoad.load(['/module/main/Main.controller.js', '/module/main/login.css']);
 					}]
-				}
+				},
+				role: [{ status: 1, toState: 'second.myLogin' }], shareData: { link: '/beerCattleKingRulesMin.html', imgUrl: '/images/theme/weChat.jpg', title: '第二届我是牛啤王＆牛啤宝贝争霸赛', desc: '第二届我是牛啤王＆牛啤宝贝争霸赛开始报名啦！观致5汽车、iPhone7、iWatch、1000元现金，大奖等你来拿！' }				
 			});
 		 
 		// 奖品controller
@@ -52,9 +55,10 @@
 				controller: 'PrizeCtrl',
 				resolve: {
 					load: ['$ocLazyLoad', function ($ocLazyLoad) {
-						return $ocLazyLoad.load(['/module/prize/Prize.controller.js','/module/prize/prize.css']);
+						return $ocLazyLoad.load(['/module/prize/Prize.controller.js', '/module/prize/prize.css']);
 					}]
-				}
+				},
+								
 			});
 		 /** endInject */
 	}]);

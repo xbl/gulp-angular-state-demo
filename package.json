@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "gulp"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-angular-state": "^1.0.0",
